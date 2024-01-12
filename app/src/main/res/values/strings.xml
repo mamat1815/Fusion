@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Fusion</string>
+    <string name="connect_login">Connect. \n Collaborate. \n Create</string>
+    <string name="login_text">Unleash your project\'s potential-find your ideal\n teamates and start creating together</string>
+    <string name="login_with">Login with</string>
+    <string name="login_with_google_button">Login with Google Button</string>
+    <string name="hello">Hello, </string>
+    <string name="settings_button">Settings Button</string>
+    <string name="search">Search...</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="discusions">Discusions</string>
+    <string name="top_post_for_today">Top Post for Today!</string>
+    <string name="sign_in_token">447856808595-59j0n6ucn2319uka6gf2icmufjeg6n2p.apps.googleusercontent.com</string>
+    <string name="title">Title</string>
+    <string-array name="sdgs">
+        <item>No Poverty</item>
+        <item>Zero Hunger</item>
+        <item>Good Health and Well-being</item>
+        <item>Quality Education</item>
+        <item>Gender Equality</item>
+        <item>Clean Water and Sanitation</item>
+        <item>Affordable and Clean Energy</item>
+        <item>Decent Work and Economic Growth</item>
+        <item>Industry, Innovation, and Infrastructure</item>
+        <item>Reduced Inequality</item>
+        <item>Sustainable Cities and Communities</item>
+        <item>Responsible Consumption and Production</item>
+        <item>Climate Action</item>
+        <item>Life Below Water</item>
+        <item>Life on Land</item>
+        <item>Peace, Justice, and Strong Institutions</item>
+        <item>Partnerships for the Goals</item>
+    </string-array>
+
+</resources>

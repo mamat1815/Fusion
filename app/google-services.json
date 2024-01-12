@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "447856808595",
+    "project_id": "fusion-1af00",
+    "storage_bucket": "fusion-1af00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447856808595:android:202193861176d6af6cb366",
+        "android_client_info": {
+          "package_name": "com.theartemis.fusion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447856808595-h0es979lho4h4ifqm6peocg752fo9oo0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theartemis.fusion",
+            "certificate_hash": "2cbe61577e34e6beaff33c88c7e5234192115960"
+          }
+        },
+        {
+          "client_id": "447856808595-59j0n6ucn2319uka6gf2icmufjeg6n2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFCIHR0MK2ZJe_UQA4mpkUUkuyXvFQjXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447856808595-59j0n6ucn2319uka6gf2icmufjeg6n2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

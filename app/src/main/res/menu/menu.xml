@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/home"
+        android:id="@+id/home"
+        android:icon="@drawable/home"/>
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/discusions"
+        android:id="@+id/discusions"
+        android:icon="@drawable/discusions"/>
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Add"
+        android:id="@+id/add"
+        android:icon="@drawable/add"/>
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Atur Vaksinasi"
+        android:id="@+id/notification"
+        android:icon="@drawable/notifications"/>
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Atur Vaksinasi"
+        android:id="@+id/teams"
+        android:icon="@drawable/teams"/>
+
+</menu>
