@@ -13,19 +13,6 @@ import kotlinx.coroutines.launch
 
 class SignInViewModel(private val dataRepository: DataRepository): ViewModel() {
 
-  /*  private val _signInResult = MutableLiveData<Response<User>>()
-    val signInResult: LiveData<Response<User>> get() = _signInResult
-
-    fun signInWithGoogle(token:String) {
-
-
-        viewModelScope.launch {
-            _signInResult.value = dataRepository.signInWithGoogle(token)
-        }
-    }*/
-
     fun signInWithGoogle(token:String) = dataRepository.signInGoogle(token)
-
-
 
 }

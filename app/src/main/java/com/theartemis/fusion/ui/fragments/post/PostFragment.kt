@@ -34,7 +34,7 @@ class PostFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PostViewModel::class.java)
-        // TODO: Use the ViewModel
+
     }
 
     private fun showBottomSheet() {

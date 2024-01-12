@@ -27,7 +27,6 @@ class AddPostFragment : BottomSheetDialogFragment() {
     private var selectedImageUri: Uri? = null
     private lateinit var viewModel: AddPostViewModel
     private lateinit var binding: FragmentAddPostBinding
-    private lateinit var auth: FirebaseAuth
     private val pickImage = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val data: Intent? = result.data

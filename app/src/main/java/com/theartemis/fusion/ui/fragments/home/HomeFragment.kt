@@ -24,7 +24,6 @@ class HomeFragment : Fragment() {
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
     private lateinit var auth: FirebaseAuth
-    private lateinit var db: DatabaseReference
 
     private lateinit var postList: ArrayList<Post>
 
@@ -72,7 +71,7 @@ class HomeFragment : Fragment() {
     private fun getMiddleName(fullName: String): String {
         val nameParts = fullName.split(" ")
         return if (nameParts.size > 2) {
-            nameParts[1] // Menyimpan nama tengah jika tersedia
+            nameParts[1]
         } else {
             nameParts[0]
         }

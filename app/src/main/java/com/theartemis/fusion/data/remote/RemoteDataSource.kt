@@ -33,22 +33,6 @@ class RemoteDataSource {
         fun onResponse(response: List<Post>)
     }
 
-    /*suspend fun signInWithGoogle(idToken: String): Response<User> {
-        return try {
-            val credential = GoogleAuthProvider.getCredential(idToken, null)
-            val authResult = auth.signInWithCredential(credential).await()
-            val user = authResult.user
-            val userData = User(user?.uid ?: "",
-                user?.displayName ?: "",
-                user?.photoUrl?.toString() ?:"")
-
-            db.child("users").child(user?.uid.toString()).setValue(userData)
-
-            Response.Success(userData)
-        } catch (e: Exception) {
-            Response.Error(e)
-        }
-    }*/
 
     fun signInWithGoogle(idToken: String, callback: SignInWithGoogleCallback){
         val credential = GoogleAuthProvider.getCredential(idToken, null)
@@ -105,11 +89,5 @@ class RemoteDataSource {
 
         })
     }
-
-    suspend fun signOut() {
-        auth.signOut()
-    }
-
-
 
 }
