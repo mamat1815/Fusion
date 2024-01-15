@@ -38,14 +38,11 @@ class SignInActivity : AppCompatActivity() {
             btnSignIn.setOnClickListener {
                 val signInIntent = configureGoogleSignIn().signInIntent
                 startActivityForResult(signInIntent, RC_SIGN_IN)
+
             }
         }
 
-        viewModel.signInWithGoogle(R.string.sign_in_token.toString()).observe(this){response ->
 
-            val user = User(uid = response.uid, displayName = response.displayName, profileImg = response.profileImg)
-            successSignIn(user)
-        }
 
     }
 
@@ -76,7 +73,11 @@ class SignInActivity : AppCompatActivity() {
             try {
                 val account = task.getResult(ApiException::class.java)
                 account?.idToken?.let {
-                    viewModel.signInWithGoogle(it)
+                    viewModel.signInWithGoogle(it).observe(this@SignInActivity) {response ->
+                        val user = User(uid = response.uid, displayName = response.displayName, profileImg = response.profileImg)
+                        successSignIn(user)
+                    }
+
                 }
             } catch (e: ApiException) {
                 showToast("Google Sign-In failed: ${e.statusCode}")
