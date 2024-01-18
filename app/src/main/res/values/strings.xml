@@ -13,6 +13,10 @@
     <string name="top_post_for_today">Top Post for Today!</string>
     <string name="sign_in_token">447856808595-59j0n6ucn2319uka6gf2icmufjeg6n2p.apps.googleusercontent.com</string>
     <string name="title">Title</string>
+    <string name="my_team">My Team</string>
+    <string name="add_new_team">Add New Team</string>
+    <string name="team_name">Team Name</string>
+    <string name="team_description">Team Description</string>
     <string-array name="sdgs">
         <item>No Poverty</item>
         <item>Zero Hunger</item>

@@ -7,6 +7,7 @@ import com.theartemis.fusion.R
 import com.theartemis.fusion.databinding.ActivityMainBinding
 import com.theartemis.fusion.ui.fragments.home.HomeFragment
 import com.theartemis.fusion.ui.fragments.post.PostFragment
+import com.theartemis.fusion.ui.fragments.team.TeamFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
                     R.id.home -> replaceFragment(HomeFragment())
                     R.id.add -> replaceFragment(PostFragment())
+                    R.id.teams -> replaceFragment(TeamFragment())
 
                 }
                 true

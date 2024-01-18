@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="0dp">
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_item_profile"
@@ -125,7 +126,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tv_item_detail"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_detail" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

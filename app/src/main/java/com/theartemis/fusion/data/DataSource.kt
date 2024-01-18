@@ -8,5 +8,6 @@ interface DataSource {
     fun signInGoogle(token:String): LiveData<User>
     fun addPost(spinner: String, title: String, description: String,imageUri: Uri): LiveData<Post>
     fun fetchPost(): LiveData<List<Post>>
+    fun  fetchDetailPost(id: String): LiveData<Post>
 
 }

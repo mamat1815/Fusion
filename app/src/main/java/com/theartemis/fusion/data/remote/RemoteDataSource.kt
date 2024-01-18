@@ -1,7 +1,7 @@
 package com.theartemis.fusion.data.remote
 
 import android.net.Uri
-import androidx.lifecycle.LiveData
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DataSnapshot
@@ -33,6 +33,10 @@ class RemoteDataSource {
         fun onResponse(response: List<Post>)
     }
 
+    interface DetailPostCallback {
+        fun onResponse(response: Post)
+    }
+
 
     fun signInWithGoogle(idToken: String, callback: SignInWithGoogleCallback){
         val credential = GoogleAuthProvider.getCredential(idToken, null)
@@ -49,10 +53,10 @@ class RemoteDataSource {
 
     fun addPost(spinner: String, title: String, description: String,imageUri: Uri, callback: AddPostCallback) {
 
-        val dbId = db.reference.child("posts").push().key.toString()
+        val dbId = db.getReference("posts").push().key.toString()
         val userId = auth.currentUser?.uid.toString()
         val username = auth.currentUser?.displayName!!
-        val dbReference = db.getReference("posts")
+        val dbReference = db.getReference("posts").child(dbId)
         val storageRef = storage.child("images/${UUID.randomUUID()}.jpg")
         val uploadTask = storageRef.putFile(imageUri)
         val userImg = auth.currentUser?.photoUrl.toString()
@@ -62,7 +66,7 @@ class RemoteDataSource {
                 val imageUrl = uri.toString()
                 val data = Post(dbId,userId,spinner, title, description, imageUrl,username,userImg)
 
-                dbReference.push().setValue(data)
+                dbReference.setValue(data)
                 callback.onResponse(data)
             }
         }
@@ -81,6 +85,27 @@ class RemoteDataSource {
                 }
 
                 callback.onResponse(postList)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    fun fetchDetailPost(id:String, callback: DetailPostCallback) {
+        Log.d("DataBaseRemote","$id")
+        db.getReference("posts").child(id).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val response = snapshot.getValue(Post::class.java)
+                Log.d("FirebaseData", "Response from Firebase: $response")
+                val data = response?.let {
+                    Post(id,
+                        it.userId, response.sdgs,response.title, response.description, response.img, response.username, response.userImg)
+                }
+                callback.onResponse(data!!)
+
             }
 
             override fun onCancelled(error: DatabaseError) {

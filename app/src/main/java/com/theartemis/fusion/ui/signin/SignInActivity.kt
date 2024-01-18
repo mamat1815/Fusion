@@ -38,12 +38,8 @@ class SignInActivity : AppCompatActivity() {
             btnSignIn.setOnClickListener {
                 val signInIntent = configureGoogleSignIn().signInIntent
                 startActivityForResult(signInIntent, RC_SIGN_IN)
-
             }
         }
-
-
-
     }
 
     private fun showToast(msg: String) {
@@ -84,7 +80,6 @@ class SignInActivity : AppCompatActivity() {
             }
         }
     }
-
 
     companion object {
         private const val RC_SIGN_IN = 9001

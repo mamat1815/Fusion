@@ -10,6 +10,7 @@ class DataRepository(private val repository: RemoteDataSource) :DataSource{
     val signIn = MutableLiveData<User>()
     val addPost = MutableLiveData<Post>()
     val fetchPost = MutableLiveData<List<Post>>()
+    val fetchDetailPost = MutableLiveData<Post>()
     val onLoading = MutableLiveData<Boolean>()
     val onFetching = MutableLiveData<Boolean>()
 
@@ -45,6 +46,16 @@ class DataRepository(private val repository: RemoteDataSource) :DataSource{
 
         })
         return fetchPost
+    }
+
+    override fun fetchDetailPost(id: String): LiveData<Post> {
+        repository.fetchDetailPost(id, object : RemoteDataSource.DetailPostCallback {
+            override fun onResponse(response: Post) {
+                fetchDetailPost.value = response
+            }
+
+        })
+        return fetchDetailPost
     }
 
 

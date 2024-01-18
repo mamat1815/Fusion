@@ -30,4 +30,38 @@ data class Comment (
     val userId: String,
     val comment: String,
 
-)
+) {
+    constructor() : this("", "", "", "")
+}
+
+@Parcelize
+data class TeamEntity(
+    val teamId: String,
+    val description: String,
+    val title: String,
+    val teamImg: String,
+    val members: Map<String, MemberEntity>,
+    val projects: Map<String, ProjectEntity>
+) : Parcelable {
+    @Parcelize
+    data class MemberEntity(
+        val userId: String,
+        val displayName: String
+    ) : Parcelable {
+        constructor() : this("", "")
+    }
+
+    @Parcelize
+    data class ProjectEntity(
+        val projectId: String,
+        val projectDescription: String,
+        val projectName: String,
+        val projectSdg: String,
+        val projectStatus: String,
+        val projectTasks: Map<String, String>
+    ) : Parcelable {
+        constructor() : this("", "", "", "", "", mapOf())
+    }
+}
+
+

@@ -14,21 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fusion"
         tools:targetApi="34">
-
+        <activity
+            android:name=".ui.mentor.MentorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detailteam.DetailTeamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detailpost.DetailPostActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".ui.signin.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

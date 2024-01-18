@@ -1,5 +1,6 @@
 package com.theartemis.fusion.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.theartemis.fusion.data.Post
 import com.theartemis.fusion.databinding.ItemPostBinding
+import com.theartemis.fusion.ui.detailpost.DetailPostActivity
 
 import com.theartemis.fusion.utility.Utility.loadImage
 
@@ -27,6 +29,15 @@ class PostAdapter(private val listPost : ArrayList<Post>) : RecyclerView.Adapter
                 tvItemUsername.text = currentPost.username
                 imgItemPost.loadImage(currentPost.img)
                 imgItemProfile.loadImage(currentPost.userImg)
+
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailPostActivity::class.java)
+                    intent.apply {
+                        putExtra(DetailPostActivity.EXTRA_ID, currentPost.id)
+                    }
+                    itemView.context.startActivity(intent)
+                }
+
             }
         }
 

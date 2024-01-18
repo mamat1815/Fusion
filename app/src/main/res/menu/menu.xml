@@ -10,7 +10,7 @@
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/discusions"
+        android:title="Chat"
         android:id="@+id/discusions"
         android:icon="@drawable/discusions"/>
     <item
@@ -22,14 +22,14 @@
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Atur Vaksinasi"
+        android:title="Notifications"
         android:id="@+id/notification"
         android:icon="@drawable/notifications"/>
 
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Atur Vaksinasi"
+        android:title="Team"
         android:id="@+id/teams"
         android:icon="@drawable/teams"/>
 

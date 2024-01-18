@@ -33,7 +33,7 @@ class PostFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PostViewModel::class.java)
+        viewModel = ViewModelProvider(this)[PostViewModel::class.java]
 
     }
 
